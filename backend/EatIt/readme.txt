@@ -1,0 +1,16 @@
+https://www.cooky.vn/cach-lam
+- link ở trên là link về các món ăn, cách làm chúng và nguyên liệu làm chúng
+- anh em vào giúp tôi insert dữ liệu vào file json nhé.
+- mỗi người tạo 1 file db-<tên mình>.json
+- làm theo mẫu json trong file db.json nhé( trong đó là ví dụ 1 món https://www.cooky.vn/cong-thuc/bap-cai-xao-mien-11286)
+- anh em làm tương tự nhá. mỗi người làm 1 chút cho nhiều với nhanh.
+- click vào chi tiết từng món ăn, để lấy:
+    - tên món (name)
+    - mô tả (description)
+    - nguyên liệu làm món (ingredients)
+    - các bước làm món đó (steps)
+    - thời gian tổng làm món đó (timer)
+    - link hình ảnh món (imageURL)
+    - link bài viết gốc (originURL)
+- anh em giúp mình liệt kê các nguyên liệu ra 1 file ingre-<tên mình>.json nhé.
+- công việc tay to, anh em thông cảm, mình k nghĩ ra giải pháp gì khác. ai có giải pháp gì hay hơn thì cứ đề xuất nhá.

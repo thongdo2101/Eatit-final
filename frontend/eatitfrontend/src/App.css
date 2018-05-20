@@ -1,0 +1,259 @@
+/* Fonts */
+
+@font-face {
+  font-family: Averta-Semibold;
+  src: url("./fonts/Averta-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Averta-Black;
+  src: url("./fonts/Averta-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Averta-Regular;
+  src: url("./fonts/Averta-Regular.otf") format("opentype");
+}
+
+body {
+  background: linear-gradient(to right, #ffa75f,#ff8342);
+}
+
+.logo {
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.navbar-brand {
+  margin: 0 auto;
+}
+
+.col-md-6 p {
+  font-family: Averta-Regular;
+  color: white;
+  font-size: 20px;
+  margin-top: 1.5em;
+
+}
+
+.col-md-6 h3 {
+  font-family: Averta-Semibold;
+  font-size: 30px;
+  color: white;
+}
+
+.img {
+  margin-top: 30px;
+}
+
+.footer {
+  margin: 0 auto;
+  margin-top: 10em;
+  font-family: Averta-Regular;
+}
+
+.food_info {
+  margin-left: 7em;
+}
+
+#flex {
+  display: flex;
+}
+
+.food_name {
+  margin-left: 20px;
+}
+
+/* SearchScreen CSS */
+.svg_search {
+  margin-top: 1em;
+}
+
+.search_form{
+  margin-top: 4em;
+}
+
+.logo_description{
+  margin-top: 2em;
+  font-family: Averta-Semibold;
+  font-size: 30px;
+  color: white;
+}
+.navbar-brand {
+  margin: 0 auto;
+}
+
+.food_info_lite {
+  margin-top: 6em;
+}
+
+.food_info_lite img {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+.food_info_lite h4 {
+  margin-top: 0.5em;
+  font-family: Averta-Semibold;
+  font-size: 32px;
+  padding-left: 15px;
+}
+
+.food_info_lite p {
+  font-family: Averta-Regular;
+  color: #b3b3b3;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+}
+
+
+.details {
+  margin-left: 15px;
+  margin-right: 15px;
+  background: white;
+  box-shadow: 0.2px 0.2px 5px;
+}
+
+.details_button {
+  color: white;
+  background: linear-gradient(to right, #fd746c,#ff9068);
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-family: Averta-Regular;
+  font-weight: 30;
+  border: 1px solid transparent;
+  position: relative;
+  left: 100px;
+  bottom: 30px;
+
+}
+
+.details_button:hover {
+  background:#fd746c;
+  box-shadow: 0 0 5px #fd746c;
+}
+
+.details_button:active {
+    box-shadow: 0 0 0 transparent;
+    transition: none;
+}
+
+.footer {
+  font-family: Averta-Regular;
+  margin: 0 auto;
+}
+/* Searchbar */
+
+
+.form-wrapper input {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  padding: 10px 5px;
+  float: left;    
+  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: 0;
+  background: #eee;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  border-radius: 25px;
+
+}
+
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+  -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+  box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-family: Averta-Regular;
+  font-size: 20px;
+}
+
+.form-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-family: Averta-Regular;
+  
+}
+
+.form-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-family: Averta-Regular;
+
+}  
+
+.form-wrapper button {
+      overflow: visible;
+      position: relative;
+      float: right;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      height: 60px;
+      width: 15%;
+      font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+      color: #fff;
+      text-transform: uppercase;
+      background: #d83c3c;
+      -moz-border-radius: 0 3px 3px 0;
+      -webkit-border-radius: 0 3px 3px 0;
+      border-radius: 25px;   
+      text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+      font-family: Averta-Semibold;
+      left: 30px;
+      
+  }   
+    
+  .form-wrapper button:hover{		
+      background: #e54040;
+  }	
+
+  .form-wrapper button:active,
+  .form-wrapper button:focus{   
+      background: #c42f2f;    
+  }
+  
+  .form-wrapper button:before {
+      content: '';
+      position: absolute;
+      border-width: 8px 8px 8px 0;
+      border-style: solid solid solid none;
+      border-color: transparent #d83c3c transparent;
+      top: 20px;
+      left: -6px;
+  }
+  
+  .form-wrapper button:hover:before{
+      border-right-color: #e54040;
+  }
+  
+  .form-wrapper button:focus:before{
+      border-right-color: #c42f2f;
+  }    
+  
+  .form-wrapper button::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+  }
+  .byline p{
+  text-align:center;
+  color:#c6c6c6;
+  font: bold 18px Arial, Helvetica, Sans-serif;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.byline p a{
+color:#d83c3c;
+text-decoration:none;
+}

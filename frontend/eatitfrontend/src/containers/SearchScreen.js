@@ -5,7 +5,7 @@ import SearchField from "../components/SearchField";
 import FoodImage from "../components/FoodImage";
 import Footer from "../components/Footer";
 import TagList from "../components/TagList";
-import axios from "../../axios";
+import axios from "../axios";
 
 class SearchScreen extends Component {
   state = {
@@ -17,6 +17,7 @@ class SearchScreen extends Component {
     this.setState({
       tagInput: input
     });
+    console.log(this.state.tagInput);
   }
   _showSearchTag() {
     axios.get();
@@ -27,7 +28,7 @@ class SearchScreen extends Component {
         <NavBar />
         <div class="container" id="background">
           <Logo />
-          <SearchField />
+          <SearchField getTagInput={this._getTagInput} />
           <TagList getTagList />
           <FoodImage />
           <Footer />

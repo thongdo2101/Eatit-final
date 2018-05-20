@@ -39,3 +39,5 @@ router.get("/:id", (req, res) => {
       //55
     });
 });
+
+module.exports = router;

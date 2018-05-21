@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import FoodInfo from '../components/FoodInfo';
 import FoodName from '../components/FoodName';
+import Footer from '../components/Footer';
 import Steps from '../components/Steps'
 import SeeMoreButton from '../components/SeeMoreButton'
 import logo from '../img/logo3.png';
@@ -42,7 +43,6 @@ class DetailsScreen extends Component {
       <div>
         <NavBar />
         <div id="flex">
-          <img src={Layer_Left} alt="" />
           <div className="container" id="background">
 
             <div className="row">
@@ -56,16 +56,14 @@ class DetailsScreen extends Component {
                 <FoodName name={this.state.name} description={this.state.description} imageURL={this.state.imageURL} />
               </div>
               <div className="col-md-6">
+              <SeeMoreButton onClickSeeMoreButton={this.onClickSeeMoreButton} flag={this.state.flag} nameButton={this.state.nameButton} />
                 {!this.state.flag ? <FoodInfo ingredients={this.state.ingredients} /> : <Steps steps={this.state.steps} />}
 
-                <SeeMoreButton onClickSeeMoreButton={this.onClickSeeMoreButton} flag={this.state.flag} nameButton={this.state.nameButton} />
               </div>
             </div>
           </div>
-          <img src={Layer_Right} alt="" />
         </div>
-        <p className="footer">©2018 Techkids - Web Fullstack Gen 11 Hackathon
-        </p>
+        <Footer />
       </div>
     );
   }

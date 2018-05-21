@@ -104,7 +104,6 @@ class SearchScreen extends Component {
       <div>
         <NavBar />
         <div id="flex">
-          <img src={Layer_Left} alt="" />
           <div className="container" id="background">
             <Logo />
             <div className="food_info_lite d-flex justify-content-center row">
@@ -120,10 +119,9 @@ class SearchScreen extends Component {
             <div className="">
               <FoodImage foods={this.state.choosedFoods} />
             </div>
-            <Footer />
           </div>
-          <img src={Layer_Right} alt="" />
         </div>
+        <Footer />
       </div>
     );
   }

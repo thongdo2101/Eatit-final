@@ -1,5 +1,4 @@
 /* Fonts */
-
 @font-face {
   font-family: Averta-Semibold;
   src: url("./fonts/Averta-Semibold.otf") format("opentype");
@@ -15,6 +14,12 @@
   src: url("./fonts/Averta-Regular.otf") format("opentype");
 }
 
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body {
   background: linear-gradient(to right, #ffa75f,#ff8342);
 }
@@ -48,7 +53,7 @@ body {
 }
 
 .footer {
-  margin: 0 auto;
+  text-align: center;
   margin-top: 10em;
   font-family: Averta-Regular;
 }
@@ -61,8 +66,12 @@ body {
   display: flex;
 }
 
-.food_name {
+.food {
   margin-left: 20px;
+}
+
+.food_name {
+  text-transform: uppercase;
 }
 
 /* SearchScreen CSS */
@@ -256,4 +265,51 @@ body {
 .byline p a{
 color:#d83c3c;
 text-decoration:none;
+}
+
+/* See More Button */
+.button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.button {
+  color: var(--color);
+  transition: 0.25s;
+}
+.button:hover, .button:focus {
+  border-color: var(--hover);
+  color: #ffd9c5;
+}
+
+.raise:hover, .raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.raise {
+  --color: #ffffff;
+  --hover: #ffd9c5;
+  margin-left: 7em;
+}
+
+.food_info {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in{
+  from {
+    position: relative;
+    opacity: 0;
+    top: -10px;
+  }
+  to{
+    position: relative;
+    opacity: 1;
+    top: 0;
+  }
 }

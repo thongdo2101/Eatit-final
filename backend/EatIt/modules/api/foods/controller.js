@@ -28,8 +28,9 @@ const getAllFoodsByCondition = userInput =>
   new Promise((resolve, reject) => {
     foodModel
       .find()
+      .select("_id name description ingredients imageURL")
+      .lean()
       .exec()
-      .select("_id name description ingredients")
       .then(async function(foods) {
         let result = await filterFood(userInput, foods);
         resolve(result);
@@ -41,9 +42,11 @@ async function filterFood(userInput, foods) {
   var result = [];
   foods.forEach(food => {
     if (userInput.length > food.ingredients.length) {
-      var flag = false;
+      let flag = false;
       food.ingredients.every(item => {
-        if (!userInput.includes(item)) {
+        if (userInput.includes(item.name)) {
+          flag = false;
+        } else {
           flag = true;
         }
       });
@@ -54,11 +57,17 @@ async function filterFood(userInput, foods) {
 
     if (
       userInput.length < food.ingredients.length &&
-      userInput.length > food.ingredients.length - 3
+      userInput.length >= food.ingredients.length - 3
     ) {
-      var flag = false;
+      let flag = false;
       userInput.every(item => {
-        if (!food.ingredients.includes(item)) {
+        var ingredientsOfFood = [];
+        food.ingredients.forEach(ingre => {
+          ingredientsOfFood.push(ingre.name);
+        });
+        if (ingredientsOfFood.includes(item)) {
+          flag = false;
+        } else {
           flag = true;
         }
       });

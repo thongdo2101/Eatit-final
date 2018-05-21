@@ -15,9 +15,18 @@ router.get("/", (req, res) => {
         });
 });
 
-router.get("/:ingId", (req, res) => {
+router.get("/id/:ingId", (req, res) => {
     ingredientController
         .getIngredient(req.params.ingId)
+        .then(ingredient => res.send(ingredient))
+        .catch(err => {
+            console.error(err);
+            res.status(500).send(err);
+        });
+});
+router.get("/name/:ingName", (req, res) => {
+    ingredientController
+        .getIngredientsByName(req.params.ingName)
         .then(ingredient => res.send(ingredient))
         .catch(err => {
             console.error(err);

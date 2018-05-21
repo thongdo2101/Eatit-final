@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/", (req, res) => {
+router.post("/ingredients/", (req, res) => {
   var userInput = req.body.userInput;
   foodController
     .getAllFoodsByCondition(userInput)

@@ -1,17 +1,9 @@
 import React, { Component } from "react";
-import SearchButton from "./SearchButton";
 
 class SearchField extends Component {
-  state = {
-    input: ""
-  };
-  _getInputTag() {
-    this.props.getInputTag(this.state.input);
-  }
   _InputChange(inputChanged) {
-    this.setState({
-      input: inputChanged
-    });
+    if (inputChanged === " ") return;
+    this.props.getTagInput(inputChanged);
   }
   render() {
     return (
@@ -21,13 +13,13 @@ class SearchField extends Component {
           <form className="form-wrapper cf">
             <input
               type="text"
-              placeholder="Enter your search here..."
+              placeholder="What are ingredients you have? ^^"
               required
               onChange={event => {
                 this._InputChange(event.target.value);
               }}
+              value={this.props.reNewTagInput}
             />
-            <SearchButton getInputTag={this.state._getInputTag} />
           </form>
         </div>
         <div className="col-md-2" />

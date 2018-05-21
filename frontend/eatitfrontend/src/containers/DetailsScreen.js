@@ -2,10 +2,41 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import FoodInfo from '../components/FoodInfo';
 import FoodName from '../components/FoodName';
+import Steps from '../components/Steps'
+import SeeMoreButton from '../components/SeeMoreButton'
 import logo from '../img/logo3.png';
 import Layer_Left from '../img/Layer 3.png';
 import Layer_Right from '../img/Layer 3 copy.png';
+import axios from '../axios';
 class DetailsScreen extends Component {
+  state = {
+    flag: false,
+    nameButton: "CÁCH LÀM"
+  };
+
+  componentDidMount() {
+    axios
+      .get(`/api/foods/${this.props.match.params.id}`)
+      .then(data => {
+        var food = data.data
+        console.log(data.data.ingredients);
+        this.setState({
+          name: food.name,
+          description: food.description,
+          imageURL: food.imageURL,
+          ingredients: food.ingredients,
+          steps: food.steps
+        })
+      })
+      .catch(err => console.error(err));
+  }
+  onClickSeeMoreButton = () => {
+    if (this.state.flag) {
+      this.setState({ flag: false, nameButton: "CÁCH LÀM" })
+    } else {
+      this.setState({ flag: true, nameButton: "NGUYÊN LIỆU" })
+    }
+  }
   render() {
     return (
       <div>
@@ -20,24 +51,21 @@ class DetailsScreen extends Component {
               </div>
 
             </div>
-            <div className = "row"> 
-            <div className = "col-md-6">
-            <FoodName />
-            </div>
-            <div className = "col-md-6">
-            <FoodInfo />
-            </div>
-            </div>
-
-
             <div className="row">
-              <p className="footer">©2018 Techkids - Web Fullstack Gen 11 Hackathon
-        </p>
-            </div>
+              <div className="col-md-6">
+                <FoodName name={this.state.name} description={this.state.description} imageURL={this.state.imageURL} />
+              </div>
+              <div className="col-md-6">
+                {!this.state.flag ? <FoodInfo ingredients={this.state.ingredients} /> : <Steps steps={this.state.steps} />}
 
+                <SeeMoreButton onClickSeeMoreButton={this.onClickSeeMoreButton} flag={this.state.flag} nameButton={this.state.nameButton} />
+              </div>
+            </div>
           </div>
           <img src={Layer_Right} alt="" />
         </div>
+        <p className="footer">©2018 Techkids - Web Fullstack Gen 11 Hackathon
+        </p>
       </div>
     );
   }

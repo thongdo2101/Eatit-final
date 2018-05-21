@@ -39,6 +39,7 @@ const getAllFoodsByCondition = userInput =>
   });
 
 async function filterFood(userInput, foods) {
+  console.log(userInput);
   var result = [];
   foods.forEach(food => {
     let count = 0;
@@ -47,10 +48,13 @@ async function filterFood(userInput, foods) {
       food.ingredients.forEach(ingre => {
         ingredientsOfFood.push(ingre.name);
       });
-      if (ingredientsOfFood.includes(item)) {
-        count++;
-      }
+      ingredientsOfFood.forEach(nItem => {
+        if (nItem.toLocaleLowerCase() === item.toLocaleLowerCase()) {
+          count++;
+        }
+      });
     });
+    console.log(count + " : " + food.ingredients.length);
     if (count >= food.ingredients.length - 2) {
       result.push(food);
     }

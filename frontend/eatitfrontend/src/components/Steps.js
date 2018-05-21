@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class Steps extends Component {
   render() {
     var stepsRender = this.props.steps.map((item, index) => (
-      <div key={index}>
+      <span key={index}>
         Bước {index + 1}: {item}
         <br />
         <br />
-      </div>
+      </span>
     ));
     return (
       <div className="food_info">

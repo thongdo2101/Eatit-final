@@ -39,7 +39,6 @@ const getAllFoodsByCondition = userInput =>
   });
 
 async function filterFood(userInput, foods) {
-  console.log(userInput);
   var result = [];
   foods.forEach(food => {
     let count = 0;

@@ -8,6 +8,8 @@ const ingredientsRouter = require("./modules/api/ingredients/router");
 
 const app = express();
 
+app.use(express.static("./public"));
+
 app.use((req, res, next) => {
   res.setHeader("X-Frame-Options", "ALLOWALL");
   if (req.headers.origin) {
@@ -45,12 +47,16 @@ app.get("/", (req, res) => {
   res.status(404).send("404 NOT FOUND");
 });
 
+app.get("/", (req, res) => {
+  res.sendFile("./public/index.html");
+});
+
 mongoose.connect(config.mongoPath, err => {
   if (err) console.error(err);
   else console.log("Database connect successful");
 });
 
-const port = process.env.port || 6969;
+const port = process.env.PORT || 6969;
 
 app.listen(port, err => {
   if (err) console.log(err);

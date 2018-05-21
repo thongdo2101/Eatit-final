@@ -12,7 +12,7 @@ class Logo extends Component {
                 </div>
                 <div className="row logo_description">
                     <div className="col-md-1"></div>
-                    <div className="col-md-10">Trang web tìm kiếm món ăn cho coder lớn nhất Techkids :D</div>
+                    <div className="col-md-10">Trang web tìm kiếm món ăn cho developers lớn nhất Techkids :D</div>
                     <div className="col-md-1"></div>
                 </div>
             </div>

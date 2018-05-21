@@ -11,7 +11,8 @@ class Footer extends Component {
                 <div className = "footer_role">
                 Đỗ Văn Thông - FU - Idea, Fullstack<br/>
                 Đào Anh Tuấn - HUST - UI/UX Design, Frontend<br/>
-                Nguyễn Khắc Minh - PTIT - Frontend</div>
+                Nguyễn Khắc Minh - PTIT - Frontend<br/>
+                Đinh Hồng Quân - Backend</div>
                 <a className = "github" href="https://github.com/thongdo2101/Eatit-final">
                 <img src={logoGitHub} alt="" width = "20%" />
                </a>

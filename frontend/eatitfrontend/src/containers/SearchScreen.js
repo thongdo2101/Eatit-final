@@ -4,8 +4,6 @@ import Logo from "../components/Logo.js";
 import SearchField from "../components/SearchField";
 import FoodImage from "../components/FoodImage";
 import Footer from "../components/Footer";
-import Layer_Left from "../img/Layer 3.png";
-import Layer_Right from "../img/Layer 3 copy.png";
 import axios from "../axios";
 
 class SearchScreen extends Component {
@@ -31,7 +29,7 @@ class SearchScreen extends Component {
       this.setState({
         tagListForShow: this.state.tagInput === "" ? [] : filterTag
       });
-    }, 500);
+    }, 100);
   }
   componentDidMount() {
     axios.get(`/api/ingredients/`).then(response => {
@@ -40,6 +38,7 @@ class SearchScreen extends Component {
       });
     });
   }
+
   _removeIngredient(tag) {
     var newChoosedTag = this.state.choosedTagList;
     newChoosedTag.forEach((item, index) => {
@@ -47,33 +46,43 @@ class SearchScreen extends Component {
         newChoosedTag.splice(index, 1);
       }
     });
+    var newTagList = this.state.tagList;
+    newTagList.push(tag);
     this.setState({
       choosedTagList: newChoosedTag,
-      tagInput: "",
-      tagListForShow: [],
-      choosedFoods: []
+      tagList: newTagList
     });
+    this._getFoods();
   }
   _clickIngredient(tag) {
     var newChoosedTag = this.state.choosedTagList;
     newChoosedTag.push(tag);
+    var newTagList = this.state.tagList;
+    newTagList.forEach((item, index) => {
+      if (item._id === tag._id) {
+        newTagList.splice(index, 1);
+      }
+    });
     this.setState({
       choosedTagList: newChoosedTag,
-      tagInput: "",
-      tagListForShow: []
+      tagList: newTagList
     });
-    var ingreList = this.state.choosedTagList.map(tag => tag.name);
+    this._getFoods();
+  }
+  _getFoods() {
+    var ingreList = this.state.choosedTagList.map(nTag => nTag.name);
     axios
       .post(`/api/foods/ingredients/`, {
         userInput: ingreList
       })
       .then(response => {
-        console.log(response);
-        this.setState({
-          choosedFoods: response.data
-        });
-        console.log(this.state.choosedFoods);
+        setTimeout(() => {
+          this.setState({
+            choosedFoods: response.data
+          });
+        }, 200);
       })
+
       .catch(err => {
         console.log(err);
       });

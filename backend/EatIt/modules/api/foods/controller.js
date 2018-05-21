@@ -41,39 +41,18 @@ const getAllFoodsByCondition = userInput =>
 async function filterFood(userInput, foods) {
   var result = [];
   foods.forEach(food => {
-    if (userInput.length > food.ingredients.length) {
-      let flag = false;
-      food.ingredients.every(item => {
-        if (userInput.includes(item.name)) {
-          flag = false;
-        } else {
-          flag = true;
-        }
+    let count = 0;
+    userInput.forEach(item => {
+      var ingredientsOfFood = [];
+      food.ingredients.forEach(ingre => {
+        ingredientsOfFood.push(ingre.name);
       });
-      if (!flag) {
-        result.push(food);
+      if (ingredientsOfFood.includes(item)) {
+        count++;
       }
-    }
-
-    if (
-      userInput.length < food.ingredients.length &&
-      userInput.length >= food.ingredients.length - 3
-    ) {
-      let flag = false;
-      userInput.every(item => {
-        var ingredientsOfFood = [];
-        food.ingredients.forEach(ingre => {
-          ingredientsOfFood.push(ingre.name);
-        });
-        if (ingredientsOfFood.includes(item)) {
-          flag = false;
-        } else {
-          flag = true;
-        }
-      });
-      if (!flag) {
-        result.push(food);
-      }
+    });
+    if (count >= food.ingredients.length - 2) {
+      result.push(food);
     }
   });
   return await result;

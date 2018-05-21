@@ -13,7 +13,7 @@ class SearchField extends Component {
           <form className="form-wrapper cf">
             <input
               type="text"
-              placeholder="What are ingredients you have? ^^"
+              placeholder="Bạn có những nguyên liệu nào trong ngày hôm nay? ^.^"
               required
               onChange={event => {
                 this._InputChange(event.target.value);

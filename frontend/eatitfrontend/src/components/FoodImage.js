@@ -7,7 +7,7 @@ class FoodImage extends Component {
     var foodsRender =
       (this.props.foods.length !== 0
         ? this.props.foods.map((food, index) => (
-            <div className="col-md-4" key={index}>
+            <div className="col-md-4 mmt" key={index}>
               <div className="details">
                 <img src={food.imageURL} alt="" width="100%" />
                 <h4>{food.name}</h4>

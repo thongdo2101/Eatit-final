@@ -54,7 +54,6 @@ async function filterFood(userInput, foods) {
         }
       });
     });
-    console.log(count + " : " + food.ingredients.length);
     if (count >= food.ingredients.length - 2) {
       result.push(food);
     }

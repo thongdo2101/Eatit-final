@@ -138,6 +138,7 @@ class SearchScreen extends Component {
             </div>
             {this.state.showLoader ? (
               <div>
+                <h1> Đang tìm kiếm món ăn </h1>
                 <div id="cooking">
                   <div class="bubble" />
                   <div class="bubble" />
@@ -155,11 +156,12 @@ class SearchScreen extends Component {
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="">
-                <FoodImage foods={this.state.choosedFoods} />
-              </div>
-            )}
+            )
+              : (
+                <div className="">
+                  <FoodImage foods={this.state.choosedFoods} />
+                </div>
+              )}
           </div>
         </div>
         <Footer />

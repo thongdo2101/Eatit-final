@@ -10,13 +10,16 @@ class FoodImage extends Component {
             <div className="col-md-4 mmt" key={index}>
               <div className="details">
                 <img src={food.imageURL} alt="" width="100%" />
-                <h4>{food.name.toLocaleUpperCase()}</h4>
+                <h4>
+                  {food.name.substring(0, 1).toLocaleUpperCase()}
+                  {food.name.substring(1, food.name.length)}
+                </h4>
                 <p>
                   {food.description.length > 250
                     ? food.description.substring(0, 250) + "..."
                     : food.description}
                 </p>
-                  <Button id={food._id} />
+                <Button id={food._id} />
               </div>
             </div>
           ))

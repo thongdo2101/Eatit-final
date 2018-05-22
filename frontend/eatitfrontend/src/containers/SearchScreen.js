@@ -4,6 +4,7 @@ import Logo from "../components/Logo.js";
 import SearchField from "../components/SearchField";
 import FoodImage from "../components/FoodImage";
 import Footer from "../components/Footer";
+import loader from "../img/loader.gif";
 import axios from "../axios";
 
 class SearchScreen extends Component {
@@ -13,7 +14,8 @@ class SearchScreen extends Component {
     tagListForShow: [],
     choosedTagList: [],
     foodList: [],
-    choosedFoods: []
+    choosedFoods: [],
+    showLoader: false
   };
 
   _getTagInput = input => {
@@ -50,7 +52,8 @@ class SearchScreen extends Component {
     newTagList.push(tag);
     this.setState({
       choosedTagList: newChoosedTag,
-      tagList: newTagList
+      tagList: newTagList,
+      showLoader: true
     });
     this._getFoods();
   }
@@ -65,7 +68,8 @@ class SearchScreen extends Component {
     });
     this.setState({
       choosedTagList: newChoosedTag,
-      tagList: newTagList
+      tagList: newTagList,
+      showLoader: true
     });
     this._getFoods();
   }
@@ -78,7 +82,8 @@ class SearchScreen extends Component {
       .then(response => {
         setTimeout(() => {
           this.setState({
-            choosedFoods: response.data
+            choosedFoods: response.data,
+            showLoader: false
           });
         }, 200);
       })
@@ -96,8 +101,8 @@ class SearchScreen extends Component {
         key={index}
         className="btn btn-info ml-1 col-md-2 mb-2"
         onClick={event => this._clickIngredient(tag)}
-        data-toggle="tooltip" 
-        data-placement="bottom" 
+        data-toggle="tooltip"
+        data-placement="bottom"
         title="nhấp để chọn nguyên liệu này"
       >
         {tag.name}
@@ -108,11 +113,11 @@ class SearchScreen extends Component {
         key={index}
         className="btn btn-success ml-1 mb-2 col-md-2"
         onClick={event => this._removeIngredient(tag)}
-        data-toggle="tooltip" 
-        data-placement="bottom" 
+        data-toggle="tooltip"
+        data-placement="bottom"
         title="nhấp để bỏ nguyên liệu này"
       >
-        {tag.name} <i className="fas fa-check"></i>
+        {tag.name} <i className="fas fa-check" />
       </button>
     ));
     return (
@@ -131,9 +136,17 @@ class SearchScreen extends Component {
             <div className="food_info_lite d-flex justify-content-center row">
               {tagListForShowRender}
             </div>
-            <div className="">
-              <FoodImage foods={this.state.choosedFoods} />
-            </div>
+            {this.state.showLoader ? (
+              <img
+                src={loader}
+                alt="loader"
+                className="loader_center food_info_lite d-flex justify-content-center"
+              />
+            ) : (
+              <div className="">
+                <FoodImage foods={this.state.choosedFoods} />
+              </div>
+            )}
           </div>
         </div>
         <Footer />

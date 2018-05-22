@@ -124,7 +124,12 @@ body {
   min-height: 100%;
   position: relative;
 }
-
+.loader_center {
+  transform: translate(-50%, 50%);
+  position: relative;
+  bottom: 0;
+  left: 50%;
+}
 
 .details_button {
   color: white;
@@ -376,8 +381,7 @@ body {
   .form-wrapper input::-webkit-input-placeholder {
     font-size: 12px;
   }
-  .details_button{
-    
+  .details_button {
   }
 }
 

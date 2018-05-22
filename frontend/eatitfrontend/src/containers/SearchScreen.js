@@ -18,7 +18,7 @@ class SearchScreen extends Component {
 
   _getTagInput = input => {
     this.setState({
-      tagInput: input
+      tagInput: input.toLocaleLowerCase()
     });
   };
   _filerTag() {
@@ -96,6 +96,9 @@ class SearchScreen extends Component {
         key={index}
         className="btn btn-info ml-1 col-md-2 mb-2"
         onClick={event => this._clickIngredient(tag)}
+        data-toggle="tooltip" 
+        data-placement="bottom" 
+        title="nhấp để chọn nguyên liệu này"
       >
         {tag.name}
       </button>
@@ -105,8 +108,11 @@ class SearchScreen extends Component {
         key={index}
         className="btn btn-success ml-1 mb-2 col-md-2"
         onClick={event => this._removeIngredient(tag)}
+        data-toggle="tooltip" 
+        data-placement="bottom" 
+        title="nhấp để bỏ nguyên liệu này"
       >
-        {tag.name}
+        {tag.name} <i className="fas fa-check"></i>
       </button>
     ));
     return (

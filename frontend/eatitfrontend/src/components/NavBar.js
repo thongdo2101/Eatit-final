@@ -8,7 +8,7 @@ class NavBar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="" width="50%" />
+            <img className="navbar_logo" src={logo} alt="" width="50%" />
           </Link>
         </nav>
       </div>

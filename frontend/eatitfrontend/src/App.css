@@ -21,9 +21,10 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(to right, #ffa75f,#ff8342);
-  background-image: url('./img/layer.png');
+  background: linear-gradient(to right, #ffa75f, #ff8342);
+  background-image: url("./img/layer.png");
   min-height: 1300px;
+  width: 100%;
 }
 
 .logo {
@@ -32,8 +33,9 @@ body {
   margin-bottom: 2em;
 }
 
-.navbar-brand {
+.navbar_logo {
   margin: 0 auto;
+  width: 50%;
 }
 
 .col-md-6 p {
@@ -41,7 +43,6 @@ body {
   color: white;
   font-size: 20px;
   margin-top: 1.5em;
-
 }
 
 .col-md-6 h3 {
@@ -53,7 +54,6 @@ body {
 .img {
   margin-top: 30px;
 }
-
 
 .food_info {
   margin-top: 2em;
@@ -77,11 +77,11 @@ body {
   margin-top: 1em;
 }
 
-.search_form{
+.search_form {
   margin-top: 4em;
 }
 
-.logo_description{
+.logo_description {
   margin-top: 2em;
   font-family: Averta-Semibold;
   font-size: 30px;
@@ -100,7 +100,6 @@ body {
   padding-right: 0px;
 }
 
-
 .food_info_lite h4 {
   margin-top: 0.5em;
   font-family: Averta-Semibold;
@@ -117,37 +116,38 @@ body {
   padding-bottom: 30px;
 }
 
-
 .details {
   margin-left: 15px;
   margin-right: 15px;
   background: white;
   box-shadow: 0.2px 0.2px 5px;
   min-height: 100%;
+  position: relative;
+}
+.button_center {
+  text-align: center;
 }
 
 .details_button {
   color: white;
-  background: linear-gradient(to right, #fd746c,#ff9068);
+  background: linear-gradient(to right, #fd746c, #ff9068);
   padding: 10px 25px;
   border-radius: 25px;
   font-family: Averta-Regular;
   font-weight: 30;
   border: 1px solid transparent;
-  position: relative;
-  left: 100px;
-  bottom: 30px;
-
+  position: absolute;
+  bottom: -20px;
 }
 
 .details_button:hover {
-  background:#fd746c;
+  background: #fd746c;
   box-shadow: 0 0 5px #fd746c;
 }
 
 .details_button:active {
-    box-shadow: 0 0 0 transparent;
-    transition: none;
+  box-shadow: 0 0 0 transparent;
+  transition: none;
 }
 
 .footer {
@@ -157,33 +157,30 @@ body {
   position: absolute;
   width: 100%;
   margin-top: 360px;
-
-
 }
 /* Searchbar */
-
 
 .form-wrapper input {
   position: absolute;
   width: 100%;
   height: 60px;
   padding: 10px 5px;
-  float: left;    
-  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  float: left;
+  font: bold 15px "lucida sans", "trebuchet MS", "Tahoma";
   border: 0;
   background: #eee;
   -moz-border-radius: 3px 0 0 3px;
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 25px;
-
+  padding-left: 20px;
 }
 
 .form-wrapper input:focus {
   outline: 0;
   background: #fff;
-  -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-  -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-  box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
 }
 
 .form-wrapper input::-webkit-input-placeholder {
@@ -197,79 +194,76 @@ body {
   color: #999;
   font-weight: normal;
   font-family: Averta-Regular;
-  
 }
 
 .form-wrapper input:-ms-input-placeholder {
   color: #999;
   font-weight: normal;
   font-family: Averta-Regular;
-
-}  
-
-.form-wrapper button {
-      overflow: visible;
-      position: relative;
-      float: right;
-      border: 0;
-      padding: 0;
-      cursor: pointer;
-      height: 60px;
-      width: 15%;
-      font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-      color: #fff;
-      text-transform: uppercase;
-      background: #d83c3c;
-      -moz-border-radius: 0 3px 3px 0;
-      -webkit-border-radius: 0 3px 3px 0;
-      border-radius: 25px;   
-      text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-      font-family: Averta-Semibold;
-      left: 30px;
-      
-  }   
-    
-  .form-wrapper button:hover{		
-      background: #e54040;
-  }	
-
-  .form-wrapper button:active,
-  .form-wrapper button:focus{   
-      background: #c42f2f;    
-  }
-  
-  .form-wrapper button:before {
-      content: '';
-      position: absolute;
-      border-width: 8px 8px 8px 0;
-      border-style: solid solid solid none;
-      border-color: transparent #d83c3c transparent;
-      top: 20px;
-      left: -6px;
-  }
-  
-  .form-wrapper button:hover:before{
-      border-right-color: #e54040;
-  }
-  
-  .form-wrapper button:focus:before{
-      border-right-color: #c42f2f;
-  }    
-  
-  .form-wrapper button::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-  }
-  .byline p{
-  text-align:center;
-  color:#c6c6c6;
-  font: bold 18px Arial, Helvetica, Sans-serif;
-  text-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
 
-.byline p a{
-color:#d83c3c;
-text-decoration:none;
+.form-wrapper button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 60px;
+  width: 15%;
+  font: bold 15px/40px "lucida sans", "trebuchet MS", "Tahoma";
+  color: #fff;
+  text-transform: uppercase;
+  background: #d83c3c;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 25px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-family: Averta-Semibold;
+  left: 30px;
+}
+
+.form-wrapper button:hover {
+  background: #e54040;
+}
+
+.form-wrapper button:active,
+.form-wrapper button:focus {
+  background: #c42f2f;
+}
+
+.form-wrapper button:before {
+  content: "";
+  position: absolute;
+  border-width: 8px 8px 8px 0;
+  border-style: solid solid solid none;
+  border-color: transparent #d83c3c transparent;
+  top: 20px;
+  left: -6px;
+}
+
+.form-wrapper button:hover:before {
+  border-right-color: #e54040;
+}
+
+.form-wrapper button:focus:before {
+  border-right-color: #c42f2f;
+}
+
+.form-wrapper button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.byline p {
+  text-align: center;
+  color: #c6c6c6;
+  font: bold 18px Arial, Helvetica, Sans-serif;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.byline p a {
+  color: #d83c3c;
+  text-decoration: none;
 }
 
 /* See More Button */
@@ -286,12 +280,14 @@ text-decoration:none;
   color: var(--color);
   transition: 0.25s;
 }
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   border-color: var(--hover);
   color: #ffd9c5;
 }
 
-.raise:hover, .raise:focus {
+.raise:hover,
+.raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
@@ -306,13 +302,13 @@ text-decoration:none;
   animation: fade-in 1s ease-out;
 }
 
-@keyframes fade-in{
+@keyframes fade-in {
   from {
     position: relative;
     opacity: 0;
     top: 10px;
   }
-  to{
+  to {
     position: relative;
     opacity: 1;
     top: 0;
@@ -326,15 +322,15 @@ text-decoration:none;
   margin-top: 70px;
 }
 
-.footer_flex{
+.footer_flex {
   display: flex;
-  justify-content:space-between ;
+  justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
   margin-bottom: 10px;
 }
 
-.footer_role{
+.footer_role {
   text-align: left;
 }
 
@@ -344,4 +340,40 @@ text-decoration:none;
 
 .github {
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 60%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  .logo_description {
+    font-size: 20px;
+    text-align: center;
+  }
+  .footer_role {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .footer_flex {
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .github {
+    order: 1;
+  }
+  .techkids {
+    text-align: center;
+  }
+  .form-wrapper input {
+    font-size: 15px;
+    width: 90%;
+  }
+  .form-wrapper input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
 }

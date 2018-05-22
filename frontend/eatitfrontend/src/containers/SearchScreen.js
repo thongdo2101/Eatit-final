@@ -137,11 +137,24 @@ class SearchScreen extends Component {
               {tagListForShowRender}
             </div>
             {this.state.showLoader ? (
-              <img
-                src={loader}
-                alt="loader"
-                className="loader_center food_info_lite d-flex justify-content-center"
-              />
+              <div>
+                <div id="cooking">
+                  <div class="bubble" />
+                  <div class="bubble" />
+                  <div class="bubble" />
+                  <div class="bubble" />
+                  <div class="bubble" />
+                  <div id="area">
+                    <div id="sides">
+                      <div id="pan" />
+                      <div id="handle" />
+                    </div>
+                    <div id="pancake">
+                      <div id="pastry" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : (
               <div className="">
                 <FoodImage foods={this.state.choosedFoods} />

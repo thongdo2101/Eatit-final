@@ -381,8 +381,6 @@ body {
   .form-wrapper input::-webkit-input-placeholder {
     font-size: 12px;
   }
-  .details_button {
-  }
 }
 
 @media only screen and (max-width: 970px) {

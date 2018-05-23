@@ -25,7 +25,7 @@ class Footer extends Component {
                         <a href="https://github.com/thongdo2101/Eatit-final">
                             <img id="github" src={logoGitHub} alt="" width="2%" />
                         </a>
-                        <a href="https://https://www.facebook.com/lf.kael">
+                        <a href="https://www.facebook.com/lf.kael">
                             <img id="facebook" src="https://png.icons8.com/metro/500/000000/facebook.png" alt="" width="2%" />
                         </a> </div>
 

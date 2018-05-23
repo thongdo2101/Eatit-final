@@ -144,8 +144,8 @@ body {
 }
 
 .details_button:hover {
-  background: #8b45fb;
-  box-shadow: 0 0 5px #8b45fb;
+  background: #6200ff;
+  box-shadow: 0 0 5px #5f00f6;
 }
 
 .details_button:active {
@@ -160,6 +160,10 @@ body {
   position: absolute;
   width: 100%;
   transform: translateY(300%);
+}
+
+.details h4 {
+  padding-right: 15px;
 }
 /* Searchbar */
 
@@ -292,7 +296,6 @@ body {
 .raise:hover,
 .raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
 }
 
 .raise {
@@ -614,6 +617,28 @@ h1 {
   .form-wrapper input::-webkit-input-placeholder {
     font-size: 12px;
   }
+  .food{
+margin: 0px;
+margin-top: 20px;
+padding: 0 10%;
+ }
+ .food_name {
+text-align: center;
+ }
+ .raise {
+  margin: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+ .food_info{
+   margin: 0;
+   margin-top: 30px;
+   padding: 0 10%;
+ }
+ .food_info h3 {
+   text-align: center;
+ }
 }
 
 @media only screen and (max-width: 970px) {

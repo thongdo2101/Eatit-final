@@ -4,6 +4,7 @@ import FoodInfo from "../components/FoodInfo";
 import FoodName from "../components/FoodName";
 import Footer from "../components/Footer";
 import Steps from "../components/Steps";
+import Logo from "../components/Logo"
 import SeeMoreButton from "../components/SeeMoreButton";
 import logo from "../img/logo.png";
 import axios from "../axios";
@@ -44,7 +45,7 @@ class DetailsScreen extends Component {
           <div className="container" id="background">
             <div className="row">
               <div className="logo">
-                <img src={logo} alt="logo" width="70%" />
+                <img src={logo} alt="logo" width="100%" />
               </div>
             </div>
             <div className="row">

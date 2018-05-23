@@ -6,7 +6,7 @@ class Logo extends Component {
             <div>
                 <div className="row">
                     <div className="logo">
-                        <img src={logo} alt="" width="80%" />
+                        <img src={logo} alt="" width="100%" />
                     </div>
 
                 </div>
